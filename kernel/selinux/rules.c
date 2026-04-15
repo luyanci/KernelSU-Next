@@ -10,7 +10,11 @@
 #include <linux/sched/types.h>
 #endif
 #include <linux/stop_machine.h>
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 11, 0)
 #include <uapi/linux/sched/types.h>
+#else
+#include <linux/sched.h>
+#endif
 
 #include "uapi/selinux.h"
 #include "klog.h" // IWYU pragma: keep
